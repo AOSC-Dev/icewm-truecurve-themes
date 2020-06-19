@@ -1,4 +1,7 @@
 1.1.0: 11/4/2020
+	Imported from upstream.
+	Dropped all "fluff" from window borders for a cleaner look.
+	Redrawn all window borders.
 
 1.0.4: 21/10/2004
 	Updated patches/theme to be compatible with icewm-1.2.16
