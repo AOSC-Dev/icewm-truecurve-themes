@@ -1,0 +1,39 @@
+1.1.0: 11/4/2020
+
+1.0.4: 21/10/2004
+	Updated patches/theme to be compatible with icewm-1.2.16
+	New default icewm.xpm (=="Start Menu") pixmap (plain "IceWM" on cobalt blue gradient background)
+	Alternative icewm.xpm pixmaps with Tux (Linux) (== the old default icewm.xpm pixmap) and Hexley (MacOSX Darwin)
+	New "Show Desktop" icon
+	New default application icon (taken from the Redhat-artwork package of BlueCurve icons)
+	New workspacebutton pixmaps for the taskbar
+	Theme now uses xft fonts with the font set to "sans-serif" - this should work with any xft distro out there (no more complaining about using Arial :)  A "non-xft" legacy theme is also provided.
+	Removed system-tray hack in the patches - problem is now fixed in Icewm
+	Readme file updates - a FAQ is now included in a vain attempt to stop the multiple questions about black bars at the top of windows ... :)
+
+1.0.3: 20/9/2003
+	Redesigned taskbar pixmaps
+	Removed individual patches
+	New patch: wmapp.cc to add "Kill Client" option on the task menus
+	New patch: wmwinmenu.cc to display all tasks on all workspaces in the one menu
+	Reworked taskbar layout patch: wmtaskbar.cc to add gaps between the buttons and the top and bottom of the taskbar, and variables to make changing these and the taskbar height much simpler.  Fixed a bug which removed the first line of the taskbar pixmap when the taskbar was at the top of the screen.  Workaround for the system-tray-black-line bug (which simply involves removing the tray).
+	Reworked wmtitle.cc patch
+	Updated patches to icewm-1.2.13pre3
+	Removed decorate.cc patch patch accepted into IceWM
+
+1.0.2: 17/3/2003
+	Made theme more compatible with non-patched versions of IceWM:
+		Commented-out explicit "TaskBarAtTop=1" from default.theme
+		Default taskbarbg pixmap is now designed for a taskbar docked to the bottom of the screen
+		Added a non-rounded-corners pixmap for taskbars at the top of the screen
+		Added rounded-corners taskbar pixmaps for screen widths of 800 and 1280 to complement the pre-existing 1024 width pixmap
+	Updated Readme file to reflect these changes
+
+1.0.1: 10/3/2003
+	Updated 1.0 patches to icewm-1.2.7
+	Added patch to decorate.cc (fixes fullscreen bug see Readme for details)
+	Added explicit "TaskBarAtTop=1" to default.theme
+	Changes to Readme file
+
+1.0: 28/2/2003
+	First public release
