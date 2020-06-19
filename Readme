@@ -1,123 +1,57 @@
-TRUECURVE THEME FOR ICEWM v1.0.4
-Copyright � 2003-2004, Owen Marshall
+TrueCurve Theme for IceWM
+=========================
 
-This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+Copyright © 2003-2004, Owen Marshall  
+Copyright © 2020, Mingcong Bai
 
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
 
-You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+details.
 
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc.:
 
+59 Temple Place, Suite 330  
+Boston, MA  
+02111-1307  
+USA
 
-Contents
---------
+Introduction
+------------
 
-1.  Introduction
-2.  Important notes
-3.  FAQ
-4.  Patch instructions
-5.  Patch details
-6.  Contact info / links
+Like its original incarnation in the early 2000s, TrueCurve for IceWM is based
+on the BlueCurve Metacity theme originally released with Red Hat 9.0. While
+there are several other BlueCurve clone themes for IceWM this is my attempt to
+perfectly mimic the original Red Hat design - something which I believe the
+others have failed to achieve.
 
+The window decorations are as close to identical as I can make them; all other
+artwork is my own, with the exception of the default folder and application
+icons which are from the GNOME 2 default icons and RedHat's BlueCurve artwork
+respectively, and Tux and Hexley on the alternative start button (Tux is of
+course the brilliant logo designed by Larry Ewing, albeit somewhat shrunken in
+this instance).
 
+In the 1.1.0 release, all window decorations were redrawn and, deriving from the
+original Red Hat design, a stripe pattern was added to the window decorations.
+Window controls were also redrawn to give it a cleaner look. Rounded borders were
+also removed in interest of screen space.
 
-1.  Introduction
-----------------
-
-TrueCurve for Icewm is based on the BlueCurve Metacity theme originally released with RedHat 8.0 (and currently obtainable within the Redhat-artwork package in Rawhide)  While there are several other BlueCurve clone themes for IceWM this is my attempt to perfectly mimic the original RedHat design - something which I believe the others have failed to achieve.
-
-The window decorations are as close to identical as I can make them; all other artwork is my own, with the exception of the default folder and application icons which are from the Gnome 2 default icons and RedHat's BlueCurve artwork respectively, and Tux and Hexley on the alternative start button (Tux is of course the brilliant logo designed by Larry Ewing, albeit somewhat shrunken in this instance).  I have also included the cursors from Xerithane's Infadel2 theme in the directory "cursors.bak" - XFree 4.3+ has multicoloured, alpha-blended cursors, far superior to what IceWM supports, and I strongly recommend the upgrade.  But for those still with older versions of XFree86, you may wish to use these - simply rename the directory to "cursors".
-
-WARNING:  This theme requires patching and recompiling the latest IceWM source for full functionality!!  Do so at your own risk ...
-
-
-
-2.  Important notes
--------------------
-
-TrueCurve now uses Xft fonts by default (specifically the "sans-serif" font alias, which should work on all distributions) requiring a recent version of IceWM.  An older theme variant using non-xft font descriptions is also included (called "non-xft") - this uses the Microsoft "Web fonts" by default (freely obtainable from http://corefonts.sourceforge.net/).
-
-Since there seems to have been quite a bit of interest in TrueCurve and not everyone is comfortable with patching and re-compiling IceWM, I have adapted the theme to be more compatible with mainstream distribution IceWM compiles (provided they have been compiled with the --enable-shaped-decorations flag).  Thus the taskbarbg pixmap has been altered to work with a taskbar at the bottom of the screen (I'm assuming that this is the preferred option for most users?) and without requiring patches.
-
-To restore the rounded-corners look, simply copy or symlink the taskbarbg pixmap corresponding to your screen resolution in TrueCurve/taskbar/ to taskbarbg.xpm, eg (to symlink): 
-
-	ln -s taskbarbg_1024x768.xpm taskbarbg.xpm
-
-and uncomment the line "TaskBarAtTop=1" in the default theme (or add this line to your preferences file).  However, please note that these rounded-corners backgrounds will not look correct without applying the provided patch.
-
-
-
-3. FAQ
-------
-
-Q.  There's black bars at the top of the windows - what's gone wrong??
-A.  You're using a version of IceWM compiled without support for shaped window decorations: upgrade to the lastest version (where it should be compiled in by default) or re-compile with the configure flag "--enable-shaped-decorations".
-
-Q.  Things like maximising/window snapping don't work correctly - why can't you fix this?
-A.  That's a bug with the way IceWM handles transparency, and I can't keep the theme looking right if I change this.
-
-
-
-4.  Patch instructions
-----------------------
-
-TrueCurve pulls uses some tricks to display correctly.  The theme will look fine "out of the box", but there are a few annoyances that I've worked around with some patches.  The particular advantages are listed in section 4 below - they slightly modify the look-and-feel of the taskbar (allowing rounded corners), make the titlebar handle the large titleM pixmap better, change the window list menu, etc. To get these extras, there is now one patch that should be applied. This is included as src.patch in the theme folder.  You will need to download the latest source code from http://sourceforge.net/projects/icewm/ and extract it, e.g.:
-
-	tar xzf icewm-1.2.14pre9.tar.gz
-
-Applying the patch is easy: copy src.patch to the icewm source-distribution directory:
-	
-	cd icewm-1.2.14pre9
-	cp [path to themes]/TrueCurve-1.0.4/src.patch .
-
-and from there do
-
-	patch -p0 < src.patch
-
-I've stopped providing the individual patches - if anyone is really interested in a particular patch file, then email me (contact details at the end of this document).  Sadly, if you only want to apply some of the patches, patch cannot prompt for individual files on a yes/no basis ... but you can always trick it by
-
-	patch -p1 < src.patch
-
-and then type in the names of files to patch (if you want to patch them, eg, "src/atasks.cc") at the prompts, or press enter to skip that patch.
-
-It's unlikely that I'll ever submit these patches to icewm.sourceforge.net - they're fairly kludgy and most are only applicable for this theme (and one in particular undoes a recent change in the icewm code (the position of the start button)) so they're unlikely be accepted.  I will try to keep the patches up-to-date with the current unstable version of IceWM; but - baring major changes - older patches will still work (patch is a quite a versatile piece of software)
-
-
-
-5.  Patch details
------------------
-
-As regards the patches themselves, here's the technical details of what they fix:
-
-1.  atasks.cc
-	Icewm currently has no pixmap for offscreen (i.e. invisible, = different workspace) apps, meaning that the taskbarbg pixmap is applied - when you've got rounded corners for the background pixmap this is very, very ugly!!  I should probably add in a completely new pixmap; but since I wasn't changing the appearance of onscreen, offscreen or minimized apps I just allowed offscreen apps to take the same pixmap as minimized ones (which is fairly logical, anyway ...)
-	
-2.  objbar.cc
-	This is another kludgy hack - IceWM draws the taskbar background again when it draws the application buttons on the taskbar, and one pixel of this is visible - it wouldn't matter except for the rounded corners, so I've simply modified it to draw the background starting 10 pixels in.
-	
-3.  wmapp.cc
-	Adding the option "Kill Client" to task menus.  Doesn't do any harm, and I find it useful ...  As of 1.0.4 it now also includes a bugfix for the workspace background xpms (should already be fixed in IceWM cvs)
-
-4.  wmtaskbar.cc
-	This patch moves the start menu 4 pixels away from the left edge (as it used to be with icewm-1.2.5 and earlier) for the sake of the rounded corners, makes the position and size of the taskbar buttons much nicer and fixes a bug which removed the top line of taskbar pixmaps when the taskbar was at the top of the screen.
-
-5.  wmtitle.cc
-	This changes the proportion of the title bar that text is allowed to occupy.  Previously, the pixmap of titleM was given precedence over the title bar text - thus if the width of the title bar on a small window was smaller or equal to the width of the titleM pixmap, no text would be drawn.  While this is not normally a problem when titleM is small, TrueCurve contains a relatively large titleM pixmap in order to fade in the striped bars that occupy the right of the title bar.  Thus the patch allows the text to occupy the area that titleM would normally take over when the window is small; it seems a simple (if not necessarily the best) solution for problematic small windows.
-	
-6.  wmwinmenu.cc
-	I've always disliked the default window menu since it requires moving the mouse over each workspace arrow to see the tasks there.  This patch shows all the tasks at once in a list where each workspace is named and separated, which I find much easier to use.  I realise that this goes a bit beyond simply patching the source to make a theme compatible, but I think it still falls under the look-and-feel category!  If anyone strongly dislikes this patch, let me know and I'll make it a separate file for the next release ...
-
-	
-	
-6.  Contact info / links
-------------------------
+Contact info / links
+--------------------
 
 You can obtain the latest IceWM source from
 
-	http://sourceforge.net/projects/icewm/
+- https://github.com/bbidulock/icewm/
 
 and the latest version of this theme from
 
-	http://freshmeat.net/projects/truecurve/
+- https://github.com/AOSC-Dev/icewm-truecurve-themes/
 
-Any queries/suggestions mail to z46629@yahoo.com
+Please report any issues or suggestions at the [issues](https://github.com/AOSC-Dev/icewm-truecurve-themes/issues/new/) page.
