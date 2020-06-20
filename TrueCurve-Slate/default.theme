@@ -1,0 +1,112 @@
+# TrueCurve-1.1.0 for IceWM
+
+ThemeDescription="TrueCurve"
+ThemeAuthor="Owen Marshall, Mingcong Bai"
+Look=metal
+
+TitleButtonsLeft="s"
+TitleButtonsRight="xmi"
+TitleButtonsSupported="xism"
+TitleBarHeight=19
+
+# TaskBarAtTop=1
+
+###########################################################
+# Border Setup
+###########################################################
+BorderSizeX=3
+BorderSizeY=3
+CornerSizeX=12
+CornerSizeY=12
+DlgBorderSizeX=1
+DlgBorderSizeY=1
+
+MenuMouseTracking=1 
+ShowMenuButtonIcon=0
+
+ColorNormalButton="rgb:ce/ce/ce"
+ColorNormalButtonText="rgb:00/00/00"
+ColorActiveButton="rgb:35/35/35"
+ColorActiveButtonText="rgb:ff/ff/ff"
+
+ColorNormalTitleBarText="rgb:7f/7f/7f"
+ColorActiveTitleBarText="rgb:ff/ff/ff"
+ColorActiveTitleBarShadow="rgb:20/20/20"
+
+ColorActiveBorder="rgb:20/20/20"
+ColorNormalBorder="rgb:20/20/20"
+
+ColorDialog="rgb:e6/e6/e6"
+ColorListBox="rgb:e6/e6/e6"
+ColorListBoxText="rgb:00/00/00"
+ColorListBoxSelection="rgb:35/35/35"
+ColorListBoxSelectionText="rgb:ff/ff/ff"
+ColorScrollBar="rgb:c3/c3/c3"
+ColorScrollBarSlider="rgb:e6/e6/e6"
+ColorScrollBarButton="rgb:e6/e6/e6"
+ColorScrollBarButtonArrow="rgb:00/00/00"
+ColorLabel="rgb:e6/e6/e6"
+ColorLabelText="rgb:35/35/35"
+
+ColorNormalMenu="rgb:e6/e6/e6"
+ColorActiveMenuItem="rgb:35/35/35"
+ColorNormalMenuItemText="rgb:00/00/00"
+ColorActiveMenuItemText="rgb:ff/ff/ff"
+ColorDisabledMenuItemText="rgb:80/80/80"
+
+ColorDefaultTaskBar="rgb:ce/ce/ce"
+ColorNormalTaskBarApp="rgb:ce/ce/ce"
+ColorNormalTaskBarAppText="rgb:00/00/00"
+ColorInvisibleTaskBarApp="rgb:ce/ce/ce"
+ColorInvisibleTaskBarAppText="rgb:50/50/50"
+ColorActiveTaskBarApp="rgb:89/8f/b6"
+ColorActiveTaskBarAppText="rgb:ff/ff/ff"
+ColorMinimizedTaskBarApp="rgb:ce/ce/ce"
+ColorMinimizedTaskBarAppText="rgb:50/50/50"
+ColorNormalWorkspaceButton="rgb:ce/ce/ce"
+ColorActiveWorkspaceButton="rgb:89/8f/b6"
+
+ColorInput="rgb:e6/e6/e6"
+ColorInputText="rgb:00/00/00"
+
+ColorClock=""
+ColorClockText="rgb:00/00/00"
+#ColorClockText="rgb:2f/38/68"
+
+ColorCPUStatusUser="rgb:35/35/35"
+ColorCPUStatusSystem="rgb:74/7c/b0"
+ColorCPUStatusNice="rgb:9d/a1/bc"
+ColorCPUStatusIdle="rgb:cf/cf/cf"
+
+ColorNetSend="rgb:35/35/35"
+ColorNetReceive="rgb:9d/a1/bc"
+ColorNetIdle=""
+
+ColorToolTip="rgb:ce/ce/ce"
+ColorToolTipText="rgb:00/00/00"
+
+ColorMoveSizeStatus="rgb:ce/ce/ce"
+ColorMoveSizeStatusText="rgb:00/00/00"
+
+ColorQuickSwitch="rgb:ce/ce/ce"
+ColorQuickSwitchText="rgb:00/00/00"
+
+# Font Specification
+TitleFontNameXft		=	Unifont:size=12:bold
+MenuFontNameXft			=	Unifont:size=12
+MinimizedWindowFontNameXft	=	Unifont:size=12
+ActiveButtonFontNameXft		=	Unifont:size=12
+NormalButtonFontNameXft		=	Unifont:size=12
+ToolButtonFontNameXft		=	Unifont:size=12
+NormalWorkspaceFontNameXft	=	Unifont:size=12
+ActiveWorkspaceFontNameXft	=	Unifont:size=12
+QuickSwitchFontNameXft		=	Unifont:size=12
+ListBoxFontNameXft		=	Unifont:size=12
+StatusFontNameXft		=	Unifont:size=12
+ToolTipFontNameXft		=	Unifont:size=12
+ActiveTaskBarFontNameXft	=	Unifont:size=12:bold
+NormalTaskBarFontNameXft	=	Unifont:size=12
+ClockFontNameXft		=	Unifont:size=12
+InputFontNameXft		=	Unifont:size=12
+
+TaskBarClockLeds=0
