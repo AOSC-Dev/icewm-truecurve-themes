@@ -1,3 +1,6 @@
+1.2.0: 19/6/2020
+	Add colour variants available from BlueCurve (Red Hat 9.0).
+
 1.1.0: 11/4/2020
 	Imported from upstream.
 	Dropped all "fluff" from window borders for a cleaner look.
